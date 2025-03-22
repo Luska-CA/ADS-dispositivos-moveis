@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 
 function GaleriaScreen() {
   const imagens = [
@@ -18,7 +25,9 @@ function GaleriaScreen() {
       <ScrollView contentContainerStyle={styles.grid}>
         {imagens.map((imagem, index) => (
           <View style={styles.container} key={index}>
-            <Image source={{ uri: imagem }}></Image>
+            <TouchableOpacity style={styles.imagem}>
+              <Image style={{ flex: 1 }} source={{ uri: imagem }}></Image>
+            </TouchableOpacity>
           </View>
         ))}
       </ScrollView>
@@ -27,32 +36,32 @@ function GaleriaScreen() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex:1
-    },
-    appBar: {
-        height: 64,
-        elevation: 3,
-        padding: 16,
-        justifyContent: "center",
-        marginBottom: 8,
-        backgroundColor: "gray"
-    },
-    appTitle: {
-        fontSize: 24,
-        color: "white"
-    },
+  container: {
+    flex: 1,
+  },
+  appBar: {
+    height: 64,
+    elevation: 3,
+    padding: 16,
+    justifyContent: "center",
+    marginBottom: 8,
+    backgroundColor: "gray",
+  },
+  appTitle: {
+    fontSize: 24,
+    color: "white",
+  },
 
-    grid: {
-        flexWrap: "wrap",
-        flexDirection: "row",
-        gap: 8,
-        paddingLeft: 8
-    },
-    imagem: {
-        height: 100,
-        width: 100
-    }
-})
+  grid: {
+    flexWrap: "wrap",
+    flexDirection: "row",
+    gap: 8,
+    paddingLeft: 8,
+  },
+  imagem: {
+    height: 100,
+    width: 100,
+  },
+});
 
 export default GaleriaScreen;
