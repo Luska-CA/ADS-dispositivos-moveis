@@ -1,6 +1,10 @@
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
 
-function Home() {
+
+function Home({ navigation }) {
+  const {logout} = useContext(AuthContext);
   return (
     <View
       style={{
@@ -10,8 +14,13 @@ function Home() {
       }}
     >
       <Text>Home</Text>
+      <Button
+        title="Ir para Perfil"
+        onPress={() => navigation.navigate("Perfil", {id: 1, nome: "Jose"})}
+      />
+      <Button title="Sair" onPress={() => logout()}/>
     </View>
   );
 }
 
-export default Home
+export default Home;
