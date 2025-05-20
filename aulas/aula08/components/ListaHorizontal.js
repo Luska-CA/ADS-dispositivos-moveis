@@ -16,7 +16,7 @@ function ListaHorizontal() {
       <Flatlist
         data={categorias}
         horizontal
-        showHorizontalScrollIndicator
+        showsHorizontalScrollIndicator={false}
         keyExtractor={(item, index) => index}
         renderItem={({ item }) => (
           <Button style={{ marginRight: 8 }}>{item}</Button>
