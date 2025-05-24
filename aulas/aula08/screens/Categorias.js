@@ -1,5 +1,6 @@
 import { View } from "react-native"
 import Grid from "../components/Grid";
+import { useNavigation } from "@react-navigation/native";
 
 function Categorias() {
     return (
